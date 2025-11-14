@@ -1,0 +1,29 @@
+{
+  "name": "Shopping Mall API",
+  "description": "Shopping Mall Demo Server API",
+  "repository": "https://github.com/peanutradio/vibe-coding-shoppingmall-demo",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "mongodb", "api"],
+  "image": "heroku/nodejs",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "env": {
+    "NODE_ENV": {
+      "description": "Node environment",
+      "value": "production"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
+  "scripts": {
+    "postinstall": "cd server && npm install"
+  }
+}
+

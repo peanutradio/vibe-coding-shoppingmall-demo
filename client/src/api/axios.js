@@ -1,7 +1,15 @@
 import axios from 'axios';
 
+const baseURL = import.meta.env.VITE_API_URL || '/api';
+
+// 디버깅용: 환경변수 확인
+if (import.meta.env.DEV) {
+  console.log('🔍 API Base URL:', baseURL);
+  console.log('🔍 VITE_API_URL:', import.meta.env.VITE_API_URL);
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL,
   headers: {
     'Content-Type': 'application/json',
   },
